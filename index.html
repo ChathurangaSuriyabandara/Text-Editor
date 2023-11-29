@@ -28,6 +28,10 @@
       function boldText() {
         applyStyle("bold");
       }
+      function italicText() {
+  applyStyle("italic");
+      }
+
       </script> 
 
     <style>
@@ -73,6 +77,9 @@
                     <button id="pic1"onclick="boldText()">
                       <img src="Resources/bold-xxl.png" width="13px" height="13px"></button>
                       
+                      <button onclick="italicText()">
+                        <img src="Resources/italic-xxl.png" width="13px" height="13px" >
+                      </button>
                 </div>
                
                 <div id="editor" contenteditable="true"></div>
