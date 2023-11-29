@@ -37,6 +37,15 @@
   applyStyle("italic");
       }
 
+      function changeFontColor() {
+  var color = document.getElementById("fontColorPicker").value;
+  applyStyle("foreColor", color);
+}
+function openFontColorPicker() {
+  $("#fontColorPicker").spectrum("toggle");
+}
+
+
       </script> 
 
     <style>
@@ -89,6 +98,7 @@
                       <button onclick="italicText()">
                         <img src="Resources/italic-xxl.png" width="13px" height="13px" >
                       </button>
+                      <input type="color" id="fontColorPicker" onchange="changeFontColor()">
                 </div>
                
                 <div id="editor" contenteditable="true"></div>
