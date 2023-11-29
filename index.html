@@ -10,6 +10,56 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Text Editor - [CT_2019_024]</title>
+
+    <script>
+        document.getElementById("editor").addEventListener("input", function() {
+        updateSelection();
+      });
+      
+      function updateSelection() {
+        selectedText = window.getSelection().toString();
+      }
+      
+      function applyStyle(style, value = null) {
+        document.execCommand(style, false, value);
+        updateSelection();
+      }
+      
+      function boldText() {
+        applyStyle("bold");
+      }
+      </script> 
+
+    <style>
+      
+        body {
+          font-family: Arial, sans-serif;
+         
+        }
+        
+        #toolbar {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          justify-content: center;
+          background-color: #c59920;
+        }
+        
+        button {
+          margin-right: 10px;
+          border: none;
+          background: none;
+          cursor: pointer;
+        }
+        
+        #editor {
+          border: 1px solid rgba(153, 115, 9, 0.774);
+          min-height: 200px;
+          padding: 10px;
+          margin-bottom: 10px;
+        }
+        
+            </style> 
 </head>
 
 <body>
@@ -18,7 +68,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Chandrasekara's Text edditor </h1>
+                <div id="toolbar">
+                 
+                    <button id="pic1"onclick="boldText()">
+                      <img src="Resources/bold-xxl.png" width="13px" height="13px"></button>
+                      
+                </div>
+               
+                <div id="editor" contenteditable="true"></div>
+                
                 <hr>
             </div>
         </div>
